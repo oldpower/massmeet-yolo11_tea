@@ -1,8 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+key = 'tea6'
 # 读取CSV文件
-df = pd.read_csv('/home/quan/yolo11_tea/runs/detect/train3/results.csv')
+df = pd.read_csv(f'/home/quan/yolo11_tea/runs/detect/train_{key}/results.csv')
 
 # 设置图表大小
 plt.figure(figsize=(16, 10))
@@ -53,7 +54,7 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 # 保存图像到本地
-plt.savefig('./assets/training_curves.png', dpi=300, bbox_inches='tight')  # dpi可调清晰度，bbox_inches防止裁剪边缘
+plt.savefig(f'./assets/training_curves_{key}.png', dpi=300, bbox_inches='tight')  # dpi可调清晰度，bbox_inches防止裁剪边缘
 
 # 可选：关闭绘图以释放内存
 plt.close()
